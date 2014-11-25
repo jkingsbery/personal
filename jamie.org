@@ -1,0 +1,10 @@
+* [0/5] As an end user, I want to upgrade my personal plan
+** TODO Handle designed case
+** TODO Handle cases of having/not having plans
+** TODO Refactor CSS
+** TODO Get prices from database instead of hard-coded 
+** TODO Generalize for upgrade 
+
+* TODO Add authorization to API endpoints
+
+* TODO Emacs Configuration for Ruby
