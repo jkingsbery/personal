@@ -1,0 +1,56 @@
+* [9/9] Upgrade Personal Plan Backend
+** [2/2] Workflow
+*** [2/2] Model
+**** DONE Percent complete
+**** DONE states
+*** DONE Migration
+*** DONE Workers
+** DONE Create Activity
+** DONE Update ActiveRecord Objects
+** DONE Unthrottle if necessary
+** DONE Update BRM
+** DONE Endpoint to start job
+** DONE Endpoint to check job status
+** DONE Generalize: activity should use person instead of a line (won't do)
+** DONE Add guard so process doesn't enter if there's already an upgrade pending (Matt did this generically)
+** DONE Make sure billing date corectly calculated with accounts that have InventorySnapshots
+** [6/6] Pull Request Feedback
+*** DONE Billing Date Query
+*** DONE Ordering of plans for which is an "upgrade"
+*** DONE Add created_for field to subscription
+*** DONE Replace different active/personal test methods with scopes in subscription_helper.rb (also, rename subscription_helper)
+*** DONE Remove Logging
+*** DONE small changes
+
+* [5/5] Esn Issues
+** DONE "Reservation in process" concept missing
+** DONE Adding line fails when subscription missing
+** DONE Retry for esn (if esn activation against TOP fails for any reason)
+** DONE Add status code to kazoo request logs in portal
+** DONE Deactivation bug
+
+* [4/4] Misc Beta cleanup
+** DONE Error saving credit card
+** DONE When there is an error, need to display error message
+** DONE Subscriptions aren't created early enough
+** DONE "Next" button should be disabled after a request is submitted
+
+* [6/6] As an onboarded end user, I want to upgrade my personal plan
+** DONE Handle designed case
+** DONE Handle cases of having/not having plans
+** DONE Refactor CSS
+** DONE Get prices from database instead of hard-coded 
+** DONE Generalize for upgrade 
+** DONE Need to re-do BRM API
+
+* [4/4] Personal Upgrade Front end
+** DONE Add Back button (won't do for beta)
+** DONE Hook-up data to display
+** [4/4] Hook-up to back end
+*** DONE Add credit card/billing address
+*** DONE Process change subscription
+*** DONE Poll for status on upgrade
+*** DONE Skip polling on downgrade
+** DONE Skip Credit Card if already applied
+** DONE UI refreshes
+

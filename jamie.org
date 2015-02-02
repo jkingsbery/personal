@@ -1,10 +1,77 @@
-* [0/5] As an end user, I want to upgrade my personal plan
-** TODO Handle designed case
-** TODO Handle cases of having/not having plans
-** TODO Refactor CSS
-** TODO Get prices from database instead of hard-coded 
-** TODO Generalize for upgrade 
+* [3/3] For 1/19/2015:
+** DONE Staging Activation BRM
+** DONE Look more into issue
+** DONE JavaScript unit tests
+
+* [3/4] For 1/20/2015:
+** DONE Add Personal Email (won't fix)
+** DONE Tests for Kazoo staying at correct state after failure
+** DONE BH-865: Recent activity credential issue (seems fixed?)
+** TODO (Maybe) Feedback for in-progress/pending personal subscription changes
+
+* For [2/3] 1/28/2015:
+** DONE Dashboard for processes currently running
+** DONE Show subscriptions that are activating/deactivating
+
+* For 1/29/2015:
+** DONE Fixing usage page bug showing "Activate Personal Plan" 
+** DONE Fix miscellaneous bugs
+** DONE Supervisor for local environment
+
+* [1/4] For 1/30/2015
+** DONE Fix Fred's phone
+** TODO Move personal number activation
+** TODO Start phone deactivation for single user
+** TODO Criteria for when a process can start (credit card available, other processes not running)
+
+
+Deactivation:
+In-bound: change module
+Out-bound: preflow? account suspension?
+
+* [3/5] As an invited user, I want to upgrade my personal plan
+** DONE Create subscriptions as part of user creation (both business and personal)
+** DONE Understand BRM impact
+*** Seems like there should be none - we're doing things basically the same, just moving up when we create subscriptions
+** DONE We should create the personal subscription when we create the user, but NOT the line
+** TODO Try to remove duplication (if necessary) from `process_cancel_line` and `process_change_subscription`
+** TODO If FinisherWorker fails, the user still doesn't have subscription objects yet to change
+
+* [1/2] Subscription Cancellation
+** TODO Subscriptions should not simply be cancelled, we should always downgrade user to Free plan
+** DONE What happens when you cancel all lines?
+
+* Analytics
+** Churn report
+** Setup in Google analytics funnels for the plan buying
+
+* [2/2] Remove binding.pry's
+** DONE report_export.rb binding.pry
+** DONE Rake task to check for binding.pry, focus
+
+* Personal Upgrade Future Questions
+** UX On downgrade: what information indicators do we need?
+** Do we have all the right ref-features for what we want to display?
+** Server needs to check for status of existing jobs before acting on new one
 
 * TODO Add authorization to API endpoints
 
-* TODO Emacs Configuration for Ruby
+* [0/3] Ruby Dev environment
+** TODO Emacs Configuration for Ruby
+** TODO Vagrant
+** TODO Kazoo Integration locally
+
+* [7/8] Fixes to onboarding process
+** DONE Onboarding needs to reload person's data on last step so we don't loop
+** DONE Onboading process should kick you back to the number page if you already have a personal number
+** TODO The bottom menu should use ng-show and a scope variable, not be shown/hidden like I'm doing now (easy for it to get messed up)
+** DONE While in approved state, should show the plans page. After that show onboarding
+** DONE Percentages are off by 2 orders of magnitude
+** DONE Percentages need to be fixed (many are 1/Count, jumps straight from 50% to 100%)
+** DONE Bug: not showing personal number 
+** DONE error on submitting job.
+
+Activies + Activity Types
+- Define new activity type when you don't want to inherit behavior from existing activity types
+- config/activity_types.yml
+
